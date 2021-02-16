@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.Pressable`
+export const Container = styled.View`
   margin: 20px;
+  background: #fff;
 `;
 
 export const Image = styled.Image`
@@ -38,4 +39,10 @@ export const Price = styled.Text`
 export const TotalPrice = styled.Text`
   color: #5b5b5b;
   text-decoration-line: underline;
+`;
+
+export const LongDescription = styled.Text`
+  font-size: 16px;
+  line-height: 24px;
+  margin-vertical: 20px;
 `;

@@ -1,17 +1,21 @@
 import styled from 'styled-components/native';
+import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
 export const Container = styled.View`
-  margin: 20px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background: #fff;
 `;
 
-export const Input = styled.TextInput`
-  font-size: 20px;
+export const Input = styled(GooglePlacesAutocomplete)`
+  font-size: 36px;
   margin-bottom: 20px;
 `;
 
 export const List = styled.FlatList``;
 
-export const ListRow = styled.Pressable`
+export const ListRow = styled.View`
   flex-direction: row;
   align-items: center;
   padding-vertical: 15px;

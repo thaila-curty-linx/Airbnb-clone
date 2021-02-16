@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {useNavigation} from '@react-navigation/native';
 import {
   Container,
   Image,
@@ -12,9 +12,14 @@ import {
 } from './styles';
 
 function Post({post}) {
-  console.log(post);
+  const navigation = useNavigation();
+
+  function goToPostPage() {
+    navigation.navigate('PostPage', {postId: post.id});
+  }
+
   return (
-    <Container>
+    <Container onPress={goToPostPage}>
       <Image source={{uri: post.image}} />
       <BedroomsText>
         {post.bed} bed {post.bedroom} bedroom

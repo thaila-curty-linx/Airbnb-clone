@@ -1,6 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../pages/Home';
+import ExploreNavigator from './ExploreNavigator';
+import SearchResults from './SearchResultsTabNavigator';
 
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -10,12 +12,12 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 const Tab = createBottomTabNavigator();
 
-function routes() {
+function HomeTabNavigator() {
   return (
     <Tab.Navigator tabBarOptions={{activeTintColor: '#f15454'}}>
       <Tab.Screen
         name="Explore"
-        component={Home}
+        component={ExploreNavigator}
         options={{
           tabBarIcon: ({color}) => (
             <Fontisto name="search" size={25} color={color} />
@@ -25,7 +27,7 @@ function routes() {
 
       <Tab.Screen
         name="Saved"
-        component={Home}
+        component={SearchResults}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome name="heart-o" size={25} color={color} />
@@ -37,7 +39,7 @@ function routes() {
         component={Home}
         options={{
           tabBarIcon: ({color}) => (
-            <FontAwesome5 name="airbnb" size={25} color={color} />
+            <FontAwesome name="heart-o" size={25} color={color} />
           ),
         }}
       />
@@ -63,4 +65,4 @@ function routes() {
   );
 }
 
-export default routes;
+export default HomeTabNavigator;

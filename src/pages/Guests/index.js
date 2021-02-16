@@ -123,7 +123,10 @@ function Guests() {
       </Container>
       <SearchButton
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.navigate('Home', {
+            screen: 'Explore',
+            params: {screen: 'SearchResults'},
+          });
         }}>
         <SearchButtonText>Search</SearchButtonText>
       </SearchButton>
